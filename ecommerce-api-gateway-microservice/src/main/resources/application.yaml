@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-gateway-microservice
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      default-filters: TokenRelay
+      routes:
+        - id: product-microservice
+          uri: lb://product-microservice
+          predicates:
+              - Path=/api/v1/products/**
+        - id: web-product-microservice
+          uri: lb://web-product-microservice
+          predicates:
+            - Path=/api/v1/productsweb/**
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${random.uuid}

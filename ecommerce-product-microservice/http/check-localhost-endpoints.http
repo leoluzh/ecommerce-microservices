@@ -1,0 +1,23 @@
+### list all endpoints
+GET http://localhost:8080
+Accept: application/json
+
+### list all products endpoint
+GET http://localhost:8080/products
+Accept: application/json
+
+### list all categories endpoint
+GET http://localhost:8080/products
+Accept: application/json
+
+### list all profiles endpoint
+GET http://localhost:8080/profile
+Accept: application/json
+
+### list all profiles endpoint
+GET http://localhost:8080/profile/products
+Accept: application/json
+
+### list all profiles endpoint
+GET http://localhost:8080/profile/categories
+Accept: application/json
